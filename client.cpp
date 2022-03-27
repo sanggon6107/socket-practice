@@ -36,7 +36,11 @@ int main()
 	// 서로 전달을 확인하지 않는다. 양방향적이지 않다. 또한 서로 신호를 확인하지 않으므로 신호 순서가 바뀔 수 있다.
 
 
-	if (h_socket == INVALID_SOCKET)					cout << "Invalid socket!" << endl;
+	if (h_socket == INVALID_SOCKET)
+	{
+		cout << "Invalid socket!" << endl;
+		WSACleanup();
+	}
 
 
 	// 3. 서버 연결
